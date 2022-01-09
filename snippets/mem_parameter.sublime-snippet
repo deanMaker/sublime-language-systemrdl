@@ -1,0 +1,13 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>mem</tabTrigger>
+    <content><![CDATA[mem ${1:memname} #($2) {
+    mementries = ${3:4096};
+    memwidth   = ${4:32}; 
+
+    $0
+};]]></content>
+    <description>Memory parameterized instance</description>
+</snippet>
+
+

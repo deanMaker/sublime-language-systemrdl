@@ -1,0 +1,17 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>addrmap</tabTrigger>
+    <content><![CDATA[addrmap ${1:blkname} {
+    name = "$2";
+    desc = "$3";
+    default regwidth = 32;
+    default sw = rw;
+    default hw = r;
+    rsvdset = 0; 
+
+    $0
+};]]></content>
+    <description>Address map component</description>
+</snippet>
+
+

@@ -1,0 +1,17 @@
+// {
+//     "scope": "source.systemrdl",
+//     "completions":
+//     [
+//         "`ifdef",
+//         "`ifndef",
+//         "`define",
+//         "`if",
+//         "`include",
+//         "`else",
+//         "`elsif",
+//         "`endif",
+//         "`include",
+//         "`undef",
+//         "`line",
+//     ]
+// }

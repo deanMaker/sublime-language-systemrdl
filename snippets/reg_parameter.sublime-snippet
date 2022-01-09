@@ -1,0 +1,13 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>reg</tabTrigger>
+    <content><![CDATA[reg ${1:regname} #($2) {
+    regwidth = ${3:32};
+    
+    $0
+};]]></content>
+    <description>Register parameteried instance</description>
+</snippet>
+
+
+

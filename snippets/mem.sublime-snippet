@@ -1,0 +1,13 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>mem</tabTrigger>
+    <content><![CDATA[mem ${1:memname} {
+    mementries = ${2:4096};
+    memwidth   = ${3:32};
+
+    $0 
+};]]></content>
+    <description>Memory component</description>
+</snippet>
+
+

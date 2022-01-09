@@ -1,0 +1,10 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>regfile</tabTrigger>
+    <content><![CDATA[regfile ${1:regname} {
+    alignment = ${2:8};
+
+    $0
+};]]></content>
+    <description>Register file component</description>
+</snippet>

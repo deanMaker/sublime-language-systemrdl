@@ -1,0 +1,6 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>constraint</tabTrigger>
+    <content><![CDATA[constraint ${1:constname} {$0};]]></content>
+    <description>Constraint component</description>
+</snippet>

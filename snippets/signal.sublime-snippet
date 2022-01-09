@@ -1,0 +1,12 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>signal</tabTrigger>
+    <content><![CDATA[signal {
+    signalwidth = ${2:32};
+
+    $0
+} ${1:signalname};]]></content>
+    <description>Signal component</description>
+</snippet>
+
+

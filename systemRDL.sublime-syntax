@@ -1,0 +1,144 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/syntax.html
+name: systemRDL
+file_extensions: [rdl]
+scope: source.systemrdl
+variables:
+  id: '[A-Za-z_][A-Za-z_0-9]*'
+contexts:
+  main:
+    - include: comments
+    - include: strings
+    - include: keywords
+    - include: operators
+    - include: numbers
+   # - include: constants
+
+  comments:
+    - match: /\*
+      captures:
+        0: punctuation.definition.comment.systemrdl
+      push:
+        - meta_scope: comment.block.systemrdl
+        - match: \*/
+          pop: true
+    - match: (//).*$\n?
+      scope: comment.line.double-slash.systemrdl
+      captures:
+        1: punctuation.definition.comment.systemrdl
+    # Attributes
+    - match: ^\s*(\(\*)\s*\w
+      captures:
+        1: punctuation.definition.attribute.systemrdl
+      push:
+        - meta_scope: comment.attribute.systemrdl
+        - match: \*\)
+          pop: true
+          captures:
+            0: punctuation.definition.attribute.systemrdl
+
+  operators:
+    - match: (==|===|!=|!==|<=|>=|<|>)
+      scope: keyword.operator.comparison.systemrdl
+    - match: (=)
+      scope: keyword.operator.assignment.systemrdl
+    - match: (\-|\+|\*|\/|<<|>>|%)
+      scope: keyword.operator.arithmetic.systemrdl
+    - match: (!|&&|\|\|)
+      scope: keyword.operator.logical.systemrdl
+    - match: '(&|\||\^|~)'
+      scope: keyword.operator.bitwise.systemrdl
+    - match: '(\{|})'
+      scope: keyword.operator.other.systemrdl
+    - match: '(\?|:)'
+      scope: keyword.operator.ternary.systemrdl
+    - match: (@)
+      scope: keyword.operator.other.systemrdl
+
+  # Strings begin and end with quotes, and use backslashes as an escape
+  # character
+  strings:
+    - match: '"'
+      captures:
+        0: punctuation.definition.string.begin.systemrdl
+      push:
+        - meta_scope: string.quoted.double.systemrdl
+        - match: '"'
+          captures:
+            0: punctuation.definition.string.end.systemrdl
+          pop: true
+        - match: \\.
+          scope: constant.character.escape.systemrdl
+
+  keywords:
+    # Keywords by Feature
+    # See: https://www.sublimetext.com/docs/scope_naming.html#keyword
+    - match: '\b(abstract|struct)\b'
+      scope: keyword.control.systemrdl
+    - match: '\b(accesstype|addressingtype|onreadtype|onwritetype)\b'
+      scope: keyword.control.systemrdl
+    - match: '\b(bit|boolean|longint|ruser|rw1|string|unsigned|w1|wclr|wot|wr|wset|wuser|wzc|wzs|wzt)\b'
+      scope: keyword.control.systemrdl
+    - match: '\b(inside|this)\b'
+      scope: keyword.control.systemrdl
+    - match: '\b(alternate|byte|int|precedencetype|real|shortint|shortreal|signed|with|within)\b'
+      scope: keyword.control.systemrdl
+    - match: '\b(field|reg|regfile|addrmap|signal|enum|mem|constraint)\b'
+      scope: keyword.control.systemrdl
+    - match: '\b(compact|regalign|fullalign)\b'
+      scope: keyword.control.systemrdl
+    - match: '\b(|all|component|type)\b'
+      scope: keyword.control.systemrdl
+    - match: '\b(componentwidth|external|na|ref)\b'
+      scope: keyword.control.systemrdl
+    - match: '\b(false|internal|negedge|posedge|rw|w)\b'  
+      scope: keyword.control.systemrdl
+    - match: '\b(bothedge|default|level|nonsticky|property)\b'
+      scope: keyword.control.systemrdl 
+    - match: '\b(alias|encode|number|r|true)\b' 
+      scope: keyword.control.systemrdl
+    # RDL Properties
+    - match: '\b(accesswidth|async|decrsaturate|donttest|haltenable|incr|incr|littleendian|ored|rsvdset|singlepulse|swwel|xored)\b' 
+      scope: keyword.control.systemrdl
+    - match: '\b(activehigh|bigendian|decrthreshold|enable|haltmask|incrsaturate|lsb0|overflow|rsvdsetX|sticky|sync)\b' 
+      scope: keyword.control.systemrdl
+    - match: '\b(activelow|bridge|decrvalue|errextbus|hwclr|incrthreshold|mask|precedence|saturate|stickybit|threshold)\b' 
+      scope: keyword.control.systemrdl
+    - match: '\b(addressing|counter|decrwidth|field_reset|hwenable|incrvalue|msb0|regwidth|shared|swacc|underflow)\b' 
+      scope: keyword.control.systemrdl
+    - match: '\b(alignment|cpuif_reset|desc|fieldwidth|hwmask|incrwidth|name|reset|sharedbus|swmod|we)\b' 
+      scope: keyword.control.systemrdl
+    - match: '\b(anded|decr|dontcompare|halt|hwset|intr|next|resetsignal|signalwidth|swwe|wel)\b' 
+      scope: keyword.control.systemrdl
+    - match: '\b(hw|sw|rclr|rset|onread|woset|woclr|onwrite|swwel)\b' 
+      scope: keyword.control.systemrdl
+    - match: '\b(hdl_path|hdl_path_slice|hdl_path_gate|hdl_path_gate_slice)\b' 
+      scope: keyword.control.systemrdl
+    - match: '`(ifdef|ifndef|define|if|include|else|elsif|endif|include|undef|line|)'
+      scope: constant.other.preprocessor.systemrdl
+
+  numbers:
+    # Numbers
+    # See: https://www.sublimetext.com/docs/scope_naming.html#constant
+    # 0x...
+    - match: '(\b0[xX][a-fA-F0-9]+\b)'
+      scope: constant.numeric.integer.hexadecimal.systemrdl
+    # x'b...
+    - match: '(\b[0-9]+''[bB][0-1_]+\b)'
+      scope: constant.numeric.integer.binary.systemrdl
+    # x'h...
+    - match: '(\b[0-9]+''[hH][0-9a-fA-F_]+\b)'
+      scope: constant.numeric.integer.hexadecimal.systemrdl
+    # x'd...
+    - match: '(\b[0-9]+''[dD][0-9_]+\b)'
+      scope: constant.numeric.integer.decimal.systemrdl
+    # x
+    - match: '(\b[0-9]+\b)'
+      scope: constant.numeric.integer.decimal.systemrdl
+
+  # constants:
+  #   - match: '`(ifdef|ifndef|define|if|include|else|elsif|endif|include|undef|line|)'
+  #     scope: constant.other.preprocessor.systemrdl
+    
+

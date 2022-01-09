@@ -1,0 +1,11 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>field</tabTrigger>
+    <content><![CDATA[field {
+    hw = r;
+    sw = rw;
+    name = "";
+    desc = "";
+} ${0:fieldname} = ${1:0};]]></content>
+    <description>Field component</description>
+</snippet>
