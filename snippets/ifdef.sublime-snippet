@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>`ifdef</tabTrigger>
+    <content><![CDATA[`ifdef $0]]></content>
+    <description>`ifdef</description>
+</snippet>
+
+

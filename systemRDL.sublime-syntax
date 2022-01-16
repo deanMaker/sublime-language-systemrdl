@@ -136,9 +136,4 @@ contexts:
     # x
     - match: '(\b[0-9]+\b)'
       scope: constant.numeric.integer.decimal.systemrdl
-
-  # constants:
-  #   - match: '`(ifdef|ifndef|define|if|include|else|elsif|endif|include|undef|line|)'
-  #     scope: constant.other.preprocessor.systemrdl
     
-

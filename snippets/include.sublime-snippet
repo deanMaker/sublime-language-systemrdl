@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>`include</tabTrigger>
+    <content><![CDATA[`include = "$0"]]></content>
+    <description>`include</description>
+</snippet>
+
+

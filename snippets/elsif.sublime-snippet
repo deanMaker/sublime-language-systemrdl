@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>`elsif</tabTrigger>
+    <content><![CDATA[`elsif $0 ]]></content>
+    <description>`elsif</description>
+</snippet>
+
+

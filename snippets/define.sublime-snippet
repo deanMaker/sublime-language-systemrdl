@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>`define</tabTrigger>
+    <content><![CDATA[`define $0 ]]></content>
+    <description>`define</description>
+</snippet>
+
+

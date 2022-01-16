@@ -26,5 +26,5 @@ Sublime SystemRDL can be installed via [Package Control](https://packagecontrol.
 3. Select `SystemRDL` 
 
 ## Requirements
-Sublime Text version 4 and later.
+Tested on Sublime Text version 4.  Unknown with version 3.  
 

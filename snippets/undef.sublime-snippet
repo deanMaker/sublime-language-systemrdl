@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>`undef</tabTrigger>
+    <content><![CDATA[`undef $0 ]]></content>
+    <description>`undef</description>
+</snippet>
+
+

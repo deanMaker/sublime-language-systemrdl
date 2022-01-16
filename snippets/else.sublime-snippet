@@ -1,0 +1,8 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>`else</tabTrigger>
+    <content><![CDATA[`else $0 ]]></content>
+    <description>`else</description>
+</snippet>
+
+

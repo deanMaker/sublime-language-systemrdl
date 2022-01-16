@@ -1,0 +1,10 @@
+<snippet>
+    <scope>source.systemrdl</scope>
+    <tabTrigger>`if</tabTrigger>
+    <content><![CDATA[`if $0
+
+`endif]]></content>
+    <description>`if-end</description>
+</snippet>
+
+
