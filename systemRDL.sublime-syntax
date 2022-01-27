@@ -107,7 +107,7 @@ contexts:
       scope: keyword.control.systemrdl
     - match: '\b(addressing|counter|decrwidth|field_reset|hwenable|incrvalue|msb0|regwidth|shared|swacc|underflow)\b' 
       scope: keyword.control.systemrdl
-    - match: '\b(alignment|cpuif_reset|desc|fieldwidth|hwmask|incrwidth|name|reset|sharedbus|swmod|we)\b' 
+    - match: '\b(alignment|cpuif_reset|desc|fieldwidth|hwmask|incrwidth|name|reset|sharedextbus|swmod|we)\b' 
       scope: keyword.control.systemrdl
     - match: '\b(anded|decr|dontcompare|halt|hwset|intr|next|resetsignal|signalwidth|swwe|wel)\b' 
       scope: keyword.control.systemrdl
